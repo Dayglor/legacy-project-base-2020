@@ -1,0 +1,44 @@
+extends ../layouts/index
+
+block content 
+    div(style={'font-size':'16', marginTop:40, width:'85%', margin:'auto', marginBottom:40, fontSize:20}) 
+        div(style={'font-size':'24', 'font-weight':'bold'}) 
+            p
+                |Olá
+                br
+                |#{name},
+                br
+                |tudo bem?
+        div(style={'font-size':'18', 'font-weight':'bold'})
+            |O seu cadastro foi aprovado!
+            br
+            br
+        |Abaixo você encontra seus dados para acessar nosso sistema.
+        br
+        br
+        div(style={'font-size':'17', 'font-weight':'bold'})
+            p
+                a(href='https://minhaconta.clearsolutions.com.br', style='color:#fd7e14') Clique aqui 
+                |para acessar o painel
+                br
+                |Dados de acesso:
+                br
+                br
+        |#[strong E-mail:] #{email}
+        br
+        |#[strong Senha:] #{password}
+        p
+            h3 Próximos passos
+            div
+                span(style={'color':'#fd7e14', 'font-weight':'bold'})|1. 
+                |Ao acessar o painel pela primeira vez será solicitada uma nova senha.
+            div
+                span(style={'color':'#fd7e14', 'font-weight':'bold'})|2. 
+                |Será necessário escolher o seu método de pagamento e inserir os dados de pagamento para liberar o acesso à plataforma.
+            div
+                span(style={'color':'#fd7e14', 'font-weight':'bold'})|3. 
+                |Caso precise de suporte em qualquer etapa, conte conosco.
+        br
+        br
+        div(style={'text-align': 'center'})
+            |Boas Vendas!

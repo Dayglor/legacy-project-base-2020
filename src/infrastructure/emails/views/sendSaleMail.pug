@@ -1,0 +1,53 @@
+extends ../layouts/index
+
+block content 
+    div(style={marginTop:40, width:'85%', margin:'auto', marginBottom:40}) 
+        p
+            |Olá #{client.trading_name}, tudo bem?
+        br
+        br
+        |Foi realizada uma venda no seu cadastro, visualize os detalhes abaixo.
+        br
+        br
+
+        //- h3 Cliente 
+        //- p 
+        //-     |Nome: #{client.trading_name}
+        //-     br
+        //-     |E-mail: #{client.email}
+        
+        h3 Produtos 
+        p 
+
+            ul 
+                each product in products
+                    li 
+                        |#{product.name}
+                        br
+                        |Quantidade: #{product.quantity}
+                        br
+                        //- |Preço unitário: #{product.unitPrice}
+                        br
+            
+        br
+        h3 Total do pedido 
+        p
+            |#{valueTotal}
+        br
+
+        h3 Forma de pagamento 
+        p(style={marginBottom: 20}) 
+            ul 
+                each payment in payments 
+                    li 
+                        |#{payment.amount}
+                        br
+                        |Tipo: #{payment.paymentType.name}
+                        br
+                        |Parcelas: #{payment.installments}
+                        if payment.reference === 5
+                            a(href=`http://plataforma.clearsolutions.com.br/plataforma/pagar/${payment.id}`)
+                                |CLique aqui para realizar o pagamento
+                        br
+                        br
+        

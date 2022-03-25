@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  crm-consultores-messages-consumer:
+    container_name: crm-consultores-messages-consumer
+    build:
+      context: .
+      dockerfile: docker/MessageConsumer.Dockerfile
+    restart: always
+    command: yarn start:messagesConsumer
+    environment:
+      - NODE_ENV=production
+
+  rabbitmq:
+    image: "bitnami/rabbitmq:3.8"
+    build:
+      context: .
+      dockerfile: docker/RabbitMQ.Dockerfile
+    ports:
+      - "4369:4369"
+      - "5672:5672"
+      - "25672:25672"
+      - "15672:15672"
+    environment:
+      - RABBITMQ_USERNAME=mqadmin
+      - RABBITMQ_PASSWORD=M4st3r*uj7geh93f
+    volumes:
+      - "rabbitmq_data:/bitnami"
+
+volumes:
+  rabbitmq_data:
+    driver: local

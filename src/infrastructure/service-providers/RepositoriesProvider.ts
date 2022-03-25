@@ -1,0 +1,86 @@
+import { autoInjectable, container } from 'tsyringe';
+
+import { MysqlAccountConfigurationRepository } from '@infrastructure/repositories/implementations/MysqlAccountConfigurationtRepository';
+import { MysqlActionRepository } from '@infrastructure/repositories/implementations/MysqlActionRepository';
+import { MysqlAddressRepository } from '@infrastructure/repositories/implementations/MysqlAddressRepository';
+import { MysqlBankRepository } from '@infrastructure/repositories/implementations/MysqlBankRepository';
+import { MysqlBillToPayBankAccountRepository } from '@infrastructure/repositories/implementations/MysqlBillToPayBankAccountRepository';
+import { MysqlCardRepository } from '@infrastructure/repositories/implementations/MysqlCardRepository';
+import { MysqlClientRepository } from '@infrastructure/repositories/implementations/MysqlClientRepository';
+import { MysqlCommentLinkRepository } from '@infrastructure/repositories/implementations/MysqlCommentLinkRepository';
+import { MysqlCommentRepository } from '@infrastructure/repositories/implementations/MysqlCommentRepository';
+import { MysqlCompanyRepository } from '@infrastructure/repositories/implementations/MysqlCompanyRepository';
+import { MysqlContactLinkRepository } from '@infrastructure/repositories/implementations/MysqlContactLinkRepository';
+import { MysqlContactRepository } from '@infrastructure/repositories/implementations/MysqlContactRepository';
+import { MysqlContactTypeRepository } from '@infrastructure/repositories/implementations/MysqlContactTypeRepository';
+import { MysqlDeliveryRepository } from '@infrastructure/repositories/implementations/MysqlDeliveryRepository';
+import { MysqlDocumentLinkRepository } from '@infrastructure/repositories/implementations/MysqlDocumentLinkRepository';
+import { MysqlDocumentRepository } from '@infrastructure/repositories/implementations/MysqlDocumentRepository';
+import { MysqlDocumentTypeRepository } from '@infrastructure/repositories/implementations/MysqlDocumentTypeRepository';
+import { MysqlMajorityMemberRepository } from '@infrastructure/repositories/implementations/MysqlMajorityMemberRepository';
+import { MysqlMenuRepository } from '@infrastructure/repositories/implementations/MysqlMenuRepository';
+import { MysqlPaymentCardRepository } from '@infrastructure/repositories/implementations/MysqlPaymentCardRepository';
+import { MysqlPaymentRepository } from '@infrastructure/repositories/implementations/MysqlPaymentRepository';
+import { MysqlPaymentTicketRepository } from '@infrastructure/repositories/implementations/MysqlPaymentTicketRepository';
+import { MysqlPaymentTypeRepository } from '@infrastructure/repositories/implementations/MysqlPaymentTypeRepository';
+import { MysqlPermissionRepository } from '@infrastructure/repositories/implementations/MysqlPermissionRepository';
+import { MysqlProductCategoryRepository } from '@infrastructure/repositories/implementations/MysqlProductCategoryRepository';
+import { MysqlProductRepository } from '@infrastructure/repositories/implementations/MysqlProductRepository';
+import { MysqlReceivableRepository } from '@infrastructure/repositories/implementations/MysqlReceivableRepository';
+import { MysqlRoleRepository } from '@infrastructure/repositories/implementations/MysqlRoleRepository';
+import { MysqlSaleCommissionRepository } from '@infrastructure/repositories/implementations/MysqlSaleCommissionRepository';
+import { MysqlSaleProductRepository } from '@infrastructure/repositories/implementations/MysqlSaleProductRepository';
+import { MysqlSaleRepository } from '@infrastructure/repositories/implementations/MysqlSaleRepository';
+import { MysqlSaleTypeRepository } from '@infrastructure/repositories/implementations/MysqlSaleTypeRepository';
+import { MysqlShippingCompanyRepository } from '@infrastructure/repositories/implementations/MysqlShippingCompanyRepository';
+import { MysqlUserBankRepository } from '@infrastructure/repositories/implementations/MysqlUserBankRepository';
+import { MysqlUserQueryHistoryRepository } from '@infrastructure/repositories/implementations/MysqlUserQueryHistoryRepository';
+import { MysqlUserQueryRepository } from '@infrastructure/repositories/implementations/MysqlUserQueryRepository';
+import { MysqlUserRepository } from '@infrastructure/repositories/implementations/MysqlUserRepository';
+import { MysqlWebhookRepository } from '@infrastructure/repositories/implementations/MysqlWebhookRepository';
+
+@autoInjectable()
+export class RepositoriesProvider {
+	async register(): Promise<void> {
+		container.register('IActionRepository', { useClass: MysqlActionRepository });
+		container.register('IAddressRepository', { useClass: MysqlAddressRepository });
+		container.register('IBankRepository', { useClass: MysqlBankRepository });
+		container.register('IClientRepository', { useClass: MysqlClientRepository });
+		container.register('ICompanyRepository', { useClass: MysqlCompanyRepository });
+		container.register('ICommentRepository', { useClass: MysqlCommentRepository });
+		container.register('ICommentLinkRepository', { useClass: MysqlCommentLinkRepository });
+		container.register('IContactLinkRepository', { useClass: MysqlContactLinkRepository });
+		container.register('IContactRepository', { useClass: MysqlContactRepository });
+		container.register('IContactTypeRepository', { useClass: MysqlContactTypeRepository });
+		container.register('IDocumentLinkRepository', { useClass: MysqlDocumentLinkRepository });
+		container.register('IDocumentRepository', { useClass: MysqlDocumentRepository });
+		container.register('IDocumentTypeRepository', { useClass: MysqlDocumentTypeRepository });
+		container.register('IMajorityMemberRepository', { useClass: MysqlMajorityMemberRepository });
+		container.register('IMenuRepository', { useClass: MysqlMenuRepository });
+		container.register('IPermissionRepository', { useClass: MysqlPermissionRepository });
+		container.register('IProductCategoryRepository', { useClass: MysqlProductCategoryRepository });
+		container.register('IProductRepository', { useClass: MysqlProductRepository });
+		container.register('IRoleRepository', { useClass: MysqlRoleRepository });
+		container.register('ISaleRepository', { useClass: MysqlSaleRepository });
+		container.register('IShippingCompanyRepository', { useClass: MysqlShippingCompanyRepository });
+		container.register('IUserRepository', { useClass: MysqlUserRepository });
+		container.register('IAccountConfigurationRepository', { useClass: MysqlAccountConfigurationRepository });
+		container.register('IProductCategoryRepository', { useClass: MysqlProductCategoryRepository });
+		container.register('IMajorityMemberRepository', { useClass: MysqlMajorityMemberRepository });
+		container.register('ISaleCommissionRepository', { useClass: MysqlSaleCommissionRepository });
+		container.register('IDeliveryRepository', { useClass: MysqlDeliveryRepository });
+		container.register('IPaymentRepository', { useClass: MysqlPaymentRepository });
+		container.register('IPaymentTypeRepository', { useClass: MysqlPaymentTypeRepository });
+		container.register('ISaleRepository', { useClass: MysqlSaleRepository });
+		container.register('ISaleTypeRepository', { useClass: MysqlSaleTypeRepository });
+		container.register('ISaleProductRepository', { useClass: MysqlSaleProductRepository });
+		container.register('IPaymentTicketRepository', { useClass: MysqlPaymentTicketRepository });
+		container.register('IUserQueryRepository', { useClass: MysqlUserQueryRepository });
+		container.register('IUserQueryHistoryRepository', { useClass: MysqlUserQueryHistoryRepository });
+		container.register('ICardRepository', { useClass: MysqlCardRepository });
+		container.register('IPaymentCardRepository', { useClass: MysqlPaymentCardRepository });
+		container.register('IReceivableRepository', { useClass: MysqlReceivableRepository });
+		container.register('IUserBankRepository', { useClass: MysqlUserBankRepository });
+		container.register('IWebhookRepository', { useClass: MysqlWebhookRepository });
+	}
+}

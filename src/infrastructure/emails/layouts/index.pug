@@ -1,0 +1,35 @@
+html
+    head 
+        title
+    body(style={background:'#e2e8f0'})
+       div(class="teste")
+            br
+            br
+            br
+
+            table(style={background:'#e2e8f0', width: '100%', marginTop:20, marginBottom: 50, border: 'none'})
+                tr
+                    td(style={width:'10%'})
+                        
+
+                    td(style={width:'80%', background:'white', padding:50})
+                        table(style={width:'100%'})
+                            tr(style={marginBottom: '50'})
+                                td(align="center" style={textAlign: 'center'})
+                                    include header.pug
+                            tr 
+                                td 
+                                    block content 
+                            tr 
+                                td(align="center" style={'font-size':'15', textAlign: 'center'})
+                                    block footer
+                                        |#[strong Um forte abraço, time CLEAR SOLUTIONS.]
+                                        br
+                                        |#[strong https://minhaconta.clearsolutions.com.br]
+                    td(style={width:'10%'})
+                        
+            br
+            br
+            br
+            br
+

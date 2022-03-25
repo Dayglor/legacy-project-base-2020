@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "commonjs",
+    "strictNullChecks": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "baseUrl": ".",
+    
+    "allowJs": true,
+    "emitDecoratorMetadata": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/@types"
+    ],
+    "paths": {
+      "@infrastructure/*": ["./src/infrastructure/*"],
+      "@useCases/*": ["./src/use-cases/*"],
+      "@tests/*": ["./src/tests/*"],
+      "@domain/*": ["./src/domain/*"],
+      "@messagesConsumers/*": ["./src/messages-consumers/*"]
+    }
+  },
+  "include": ["src/**/*"]
+}
+
