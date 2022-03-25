@@ -1,6 +1,7 @@
 node_modules
 
 ormconfig.json
+tmp
 
 package-lock.json
 yarn-error.log
